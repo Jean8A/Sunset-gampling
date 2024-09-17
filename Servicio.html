@@ -126,7 +126,7 @@
                                 <td>$150 por noche</td>
                                 <td>Jacuzzi</td>
                                 <td>
-                                    <select id="estadoHabitacion" class="form-control-sm">
+                                    <select id="estadoHabitacion" class="form-control-sm estado-btn">
                                     <option value="disponible">Disponible</option>
                                     <option value="ocupada">Ocupada</option>
                                     <option value="mantenimiento">En Mantenimiento</option>
@@ -149,7 +149,12 @@
                                 <td>Una habitación cómoda</td>
                                 <td>$80 por noche</td>
                                 <td>Cabaña 2</td>
-                                <td>Mantenimiento</td>
+                                <td>
+                                    <select  id="estadoHabitacion1" class="form-control-sm estado-btn">
+                                    <option value="disponible">Disponible</option>
+                                    <option value="ocupada">Ocupada</option>
+                                    <option value="mantenimiento">En Mantenimiento</option>
+                                    </select></td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -657,9 +662,18 @@
                 <span class="close">&times;</span>
                 <h4>Seguro que quieres eliminar</h4>
                 <form id="eliminarForm">
-                    <button type="submit" class="btn">Aceptar</button>
+                    <button type="submit" class="btn aceptar">Aceptar</button>
                     <button type="button" class="btn cancel">Cancelar</button>
                 </form>
+            </div>
+        </div>
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Confirmación</h2>
+                <h4>¿Seguro que quieres cambiar el estado?</h4>
+                <button id="confirmBtn" class="btn btn-sm btn-success">Sí, cambiar</button>
+                <button id="cancelBtn" class="btn btn-sm btn-danger">Cancelar</button>
             </div>
         </div>
         <div class="module-content" id="dashboard" style="display: none;">
@@ -903,19 +917,12 @@
                                     <button class="btn btn-sm btn-danger">Eliminar</button>
                                 </td>
                             </tr>
-                           
                         </tbody>
                     </table>
                 </div>
             </div>
         </div> 
     </div>
-    
-
-
-    
-    
- 
     
     
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

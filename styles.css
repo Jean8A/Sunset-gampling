@@ -188,6 +188,36 @@ body {
     margin-right: 5px;
 }
 
+#eliminarModal h4{
+    text-align: center;
+}
+
+#eliminarForm{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#eliminarModal .modal-content .aceptar:hover{
+    background-color: #308b30;
+    color: rgb(255, 255, 255);
+}
+
+#eliminarModal .modal-content .cancel:hover{
+    background-color: #c82333;
+    color: rgb(255, 255, 255);
+}
+
+#confirmModal h4,h2{
+    text-align: center;
+}
+
+#confirmModal {
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
 .modal {
     display: none; 
     position: fixed; 

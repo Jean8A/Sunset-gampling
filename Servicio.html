@@ -184,27 +184,19 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Nombre del inmueble</th>
-                                <th>Dirección</th>
-                                <th>Tipo de inmueble</th>
-                                <th>Número de habitaciones</th>
-                                <th>Descripción</th>
-                                <th>Estado del inmueble</th>
-                                <th>Fecha de registro</th>
-                                <th>Acciones</th>
+                                <th>ID_rol</th>
+                                <th>Nombre_rol</th>
+                                <th>Permisos</th>
+                                <th>Estado</th>
+                                <th> Acciones</th
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Cabaña 1</td>
-                                <td>Calle 123</td>
-                                <td>Residencial</td>
-                                <td>4</td>
-                                <td>Una cabaña acogedora</td>
-                                <td>Disponible</td>
-                                <td>01/08/2024</td>
+                                <td>01</td>
+                                <td>Cliente</td>
+                                <td>Productos-Clientes</td>
+                                <td>inactivo</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -212,33 +204,41 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <select id="estadoHabitacion" class="form-control-sm estado-btn">
+                                        <option value="disponible">Disponible</option>
+                                        <option value="ocupada">Ocupada</option>
+                                        <option value="mantenimiento">En Mantenimiento</option>
+                                        </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td>2</td>
-                                <td>Cabaña 2</td>
-                                <td>Avenida 456</td>
-                                <td>Residencial</td>
-                                <td>2</td>
-                                <td>Una cabaña moderna</td>
-                                <td>Ocupada</td>
-                                <td>15/08/2024</td>
+                                <td>03</td>
+                                <td>Administrador</td>
+                                <td>Roles-Usuarios-Insumos-Proveedor</td>
+                                <td>Activo</td>
                                 <td>
+                                    
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
                                     </button>
+                                    
+                                    
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <select id="estadoHabitacion" class="form-control-sm estado-btn">
+                                        <option value="disponible">Disponible</option>
+                                        <option value="ocupada">Ocupada</option>
+                                        <option value="mantenimiento">En Mantenimiento</option>
+                                        </select>
+                                    
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-        
-
+        </div>  
 
 
 

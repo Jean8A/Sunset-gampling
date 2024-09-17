@@ -74,11 +74,6 @@ function closeModal(modalId) {
 }
 
 
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        closeModal(event.target.id);
-    }
-}
 
 document.querySelectorAll('.close').forEach(function(span) {
     span.onclick = function() {
@@ -134,10 +129,9 @@ document.querySelector('.close').addEventListener('click', function() {
     document.getElementById("eliminarModal").style.display = "none";
 });
 
-
 // Cerrar el modal al hacer clic en el botón de cancelar
-document.querySelector('.cancel').addEventListener('click', function() {
-    document.getElementById("eliminarModal").style.display = "none";
+document.getElementById('eliminarModal').addEventListener('click', function () {
+    closeModal('eliminarModal');
 });
 
 $(document).ready(function() {
@@ -184,3 +178,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var estadoSelect = document.querySelector('.estado-btn');
+    var modal = document.getElementById('confirmModal');
+    var closeBtn = document.querySelector('.close');
+    var confirmBtn = document.getElementById('confirmBtn');
+    var cancelBtn = document.getElementById('cancelBtn');
+    var previousValue = estadoSelect.value; // Valor anterior del select
+
+    // Al cambiar el estado en el menú desplegable
+    estadoSelect.addEventListener('change', function(event) {
+        modal.style.display = 'block';
+    });
+
+    // Cerrar el modal al hacer clic en la "x"
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+        estadoSelect.value = previousValue; // Revertir al valor anterior si se cancela
+    };
+
+    // Si el usuario confirma el cambio
+    confirmBtn.onclick = function() {
+        previousValue = estadoSelect.value; // Actualizar el valor anterior con el nuevo estado
+        modal.style.display = 'none';
+    };
+
+    // Si el usuario cancela el cambio
+    cancelBtn.onclick = function() {
+        modal.style.display = 'none';
+        estadoSelect.value = previousValue; // Revertir al valor anterior si se cancela
+    };
+
+    // Si el usuario hace clic fuera del modal, también se cierra
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            closeModal(event.target.id);
+            estadoSelect.value = previousValue;
+        }
+        
+    };
+    
+});
+
+      
+

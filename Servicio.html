@@ -12,7 +12,14 @@
 
 
 </head>
-<body>
+<body>  
+     <div class="top-navbar">
+        <div class=></div>
+        <div class="user-info">
+            <span id="username">Usuario</span>
+            <a href="Inicio.html" id="logoutButton">Cerrar sesión</a>
+        </div>
+    </div>
     <button id="toggleSidebar" class="toggle-button">☰</button>
     <div class="sidebar">
         <h4>Sunset Glamping</h4>
@@ -102,23 +109,29 @@
                                 <th>Nombre de la habitación</th>
                                 <th>Tipo de habitación</th>
                                 <th>Capacidad</th>
-                                <th>Estado de la habitación</th>
                                 <th>Descripción</th>
                                 <th>Precio por noche</th>
                                 <th>Inmueble asociado</th>
+                                <th>Estado de la habitación</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Habitación Deluxe</td>
+                                <td>Habitación 1</td>
                                 <td>Deluxe</td>
                                 <td>4</td>
-                                <td>Disponible</td>
                                 <td>Una habitación lujosa</td>
                                 <td>$150 por noche</td>
-                                <td>Cabaña 1</td>
+                                <td>Jacuzzi</td>
+                                <td>
+                                    <select id="estadoHabitacion" class="form-control-sm estado-btn">
+                                    <option value="disponible">Disponible</option>
+                                    <option value="ocupada">Ocupada</option>
+                                    <option value="mantenimiento">En Mantenimiento</option>
+                                    </select>
+                                </td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -130,13 +143,18 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Habitación Estándar</td>
+                                <td>Habitación 2</td>
                                 <td>Estándar</td>
                                 <td>2</td>
-                                <td>Ocupada</td>
                                 <td>Una habitación cómoda</td>
                                 <td>$80 por noche</td>
                                 <td>Cabaña 2</td>
+                                <td>
+                                    <select  id="estadoHabitacion1" class="form-control-sm estado-btn">
+                                    <option value="disponible">Disponible</option>
+                                    <option value="ocupada">Ocupada</option>
+                                    <option value="mantenimiento">En Mantenimiento</option>
+                                    </select></td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -242,25 +260,21 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre del inmueble</th>
-                                <th>Dirección</th>
                                 <th>Tipo de inmueble</th>
-                                <th>Número de habitaciones</th>
                                 <th>Descripción</th>
-                                <th>Estado del inmueble</th>
                                 <th>Fecha de registro</th>
+                                <th>Estado del inmueble</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Cabaña 1</td>
-                                <td>Calle 123</td>
-                                <td>Residencial</td>
-                                <td>4</td>
-                                <td>Una cabaña acogedora</td>
-                                <td>Disponible</td>
+                                <td>Jacuzzi</td>
+                                <td>No se</td>
+                                <td>No se</td>
                                 <td>01/08/2024</td>
+                                <td>Disponible</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -272,13 +286,11 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Cabaña 2</td>
-                                <td>Avenida 456</td>
-                                <td>Residencial</td>
-                                <td>2</td>
-                                <td>Una cabaña moderna</td>
-                                <td>Ocupada</td>
+                                <td>Mesa</td>
+                                <td>No se</td>
+                                <td>No se</td>
                                 <td>15/08/2024</td>
+                                <td>Disponible</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -434,8 +446,9 @@
                                 <th>Descripción</th>
                                 <th>Precio total</th>
                                 <th>Duración</th>
-                                <th>ID del tipo de habitación</th>
+                                <th>Tipo de habitación</th>
                                 <th>Servicios incluidos</th>
+                                <th>Estado de paquetes</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -448,6 +461,7 @@
                                 <td>2 noches</td>
                                 <td>Deluxe</td>
                                 <td>Desayuno, WiFi</td>
+                                <td>Activo</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -465,6 +479,7 @@
                                 <td>3 noches</td>
                                 <td>Estándar</td>
                                 <td>WiFi</td>
+                                <td>Inactivo</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -488,22 +503,36 @@
                     <input type="text" id="nombreHabitacion" name="nombreHabitacion" required>
         
                     <label for="tipoHabitacion">Tipo de habitación:</label>
-                    <input type="text" id="tipoHabitacion" name="tipoHabitacion" required>
+                    <select id="tipoHabitacion" name="tipoHabitacion" required>
+                        <option value="">Seleccione un tipo</option>
+                        <option value="simple">Delux</option>
+                        <option value="doble">Estandar</option>
+                    </select>
         
                     <label for="capacidad">Capacidad:</label>
                     <input type="number" id="capacidad" name="capacidad" required>
         
                     <label for="estadoHabitacion">Estado de la habitación:</label>
-                    <input type="text" id="estadoHabitacion" name="estadoHabitacion" required>
+                    <select id="estadoHabitacion" name="estadoHabitacion" required>
+                        <option value="">Seleccione un estado</option>
+                        <option value="disponible">Disponible</option>
+                        <option value="ocupada">Mantenimiento</option>
+                    </select>
         
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" name="descripcion" required></textarea>
         
                     <label for="precioPorNoche">Precio por noche:</label>
                     <input type="text" id="precioPorNoche" name="precioPorNoche" required>
-        
-                    <label for="inmuebleAsociado">Inmuebles asociado:</label>
-                    <input type="text" id="inmuebleAsociado" name="inmuebleAsociado" required>
+                    <div>
+                        <label for="inmuebleAsociado">Inmuebles asociados:</label>
+                        <select id="inmuebleAsociado" name="inmuebleAsociado[]" multiple required>
+                        <option value="inmueble1">Televisor</option>
+                        <option value="inmueble2">Jacuzzi</option>
+                        <option value="inmueble3">Tina</option>
+                        </select>
+                    </div>
+                    
         
                     <button type="submit" class="btn">Guardar</button>
                     <button type="button" class="btn cancel" id="cancelHabitacionButton">Cancelar</button>
@@ -518,20 +547,18 @@
                     <label for="nombreInmueble">Nombre del inmueble:</label>
                     <input type="text" id="nombreInmueble" name="nombreInmueble" required>
         
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" required>
-        
                     <label for="tipoInmueble">Tipo de inmueble:</label>
                     <input type="text" id="tipoInmueble" name="tipoInmueble" required>
-        
-                    <label for="numeroHabitaciones">Número de habitaciones:</label>
-                    <input type="number" id="numeroHabitaciones" name="numeroHabitaciones" required>
         
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" name="descripcion" required></textarea>
         
                     <label for="estadoInmueble">Estado del inmueble:</label>
-                    <input type="text" id="estadoInmueble" name="estadoInmueble" required>
+                    <select id="estadoInmueble" name="estadoInmueble" required>
+                        <option value="">Seleccione un estado</option>
+                        <option value="disponible">Disponible</option>
+                        <option value="ocupada">Mantenimiento</option>
+                    </select>
         
                     <label for="fechaRegistro">Fecha de registro:</label>
                     <input type="date" id="fechaRegistro" name="fechaRegistro" required>
@@ -558,9 +585,14 @@
         
                     <label for="precioBasePorNoche">Precio base por noche:</label>
                     <input type="text" id="precioBasePorNoche" name="precioBasePorNoche" required>
-        
-                    <label for="serviciosIncluidos">Servicios incluidos:</label>
-                    <input type="text" id="serviciosIncluidos" name="serviciosIncluidos" required>
+
+                    <div>
+                        <label for="serviciosIncluidos">Servicios incluidos:</label>
+                        <select id="serviciosIncluidos" name="serviciosIncluidos[]" multiple required>
+                        <option value="servicio1">Wifi</option>
+                        <option value="servicio2">Desayuno</option>
+                        </select>
+                    </div>
         
                     <button type="submit" class="btn">Guardar</button>
                     <button type="button" class="btn cancel" id="cancelTipohabitacionButton">Cancelar</button>
@@ -605,11 +637,20 @@
                     <label for="duracion">Duración:</label>
                     <input type="text" id="duracion" name="duracion" required>
         
-                    <label for="tipoHabitacionId">ID del tipo de habitación:</label>
-                    <input type="text" id="tipoHabitacionId" name="tipoHabitacionId" required>
+                    <label for="tipoHabitacion">Habitación:</label>
+                    <select id="tipoHabitacion" name="idtipoHabitacion" required>
+                        <option value="">Seleccione un tipo</option>
+                        <option value="tipoHabitacion1">Habitacion 1</option>
+                        <option value="tipoHabitacion2">Habitacion 2</option>
+                    </select>
         
-                    <label for="serviciosIncluidos">Servicios incluidos:</label>
-                    <input type="text" id="serviciosIncluidos" name="serviciosIncluidos" required>
+                    <div>
+                        <label for="serviciosIncluidos">Servicios incluidos:</label>
+                        <select id="serviciosIncluidos" name="serviciosIncluidos[]" multiple required>
+                        <option value="servicio1">Wifi</option>
+                        <option value="servicio2">Desayuno</option>
+                        </select>
+                    </div>
         
                     <button type="submit" class="btn">Guardar</button>
                     <button type="button" class="btn cancel" id="cancelPaqueteButton">Cancelar</button>
@@ -621,9 +662,18 @@
                 <span class="close">&times;</span>
                 <h4>Seguro que quieres eliminar</h4>
                 <form id="eliminarForm">
-                    <button type="submit" class="btn">Aceptar</button>
+                    <button type="submit" class="btn aceptar">Aceptar</button>
                     <button type="button" class="btn cancel">Cancelar</button>
                 </form>
+            </div>
+        </div>
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Confirmación</h2>
+                <h4>¿Seguro que quieres cambiar el estado?</h4>
+                <button id="confirmBtn" class="btn btn-sm btn-success">Sí, cambiar</button>
+                <button id="cancelBtn" class="btn btn-sm btn-danger">Cancelar</button>
             </div>
         </div>
         <div class="module-content" id="dashboard" style="display: none;">
@@ -867,27 +917,12 @@
                                     <button class="btn btn-sm btn-danger">Eliminar</button>
                                 </td>
                             </tr>
-                           
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-
-        
+        </div> 
     </div>
-    
-
-
-    
-    
- 
     
     
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

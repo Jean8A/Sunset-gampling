@@ -713,9 +713,33 @@
             <div class="modal-content">
                 <span class="close" data-target="reservaModal">&times;</span>
                 <form action="">
-                    
-                    <input type="text" id="search-input" name="search" placeholder="Buscar por nombre" required>
-                    <button type="submit" class="btn">Buscar</button> <br>
+                    <div class="barrabusqueda">
+                        <div class="info">
+                            <div class="search-container">
+                                <input type="text" id="search-input" placeholder="Buscar...">
+                                <button onclick="searchFunction()">
+                                    <img id="fotojean" src="fotosJean/lupa2.webp"> <!-- Reemplaza con tu icono de lupa -->
+                                </button>
+                            </div>
+                            <br>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" value="Juan" readonly>
+                
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" value="Pérez" readonly>
+                
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" id="direccion" value="Calle Falsa 123" readonly>
+                
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" value="juan.perez@example.com" readonly>
+                
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" value="1234567890" readonly>
+                        </div>
+                
+                        
+                    </div>
                     <button id="toggle-form-btn" class="btn">Agregar Usuario Nuevo</button>
                     <div class="hidden" id="form-container"> 
                         <div class="form-section" >
@@ -740,15 +764,7 @@
                             </div>
 
                     </div>
-                    <div class="form-section">
-                          
-                        <h2>Datos de la Reserva</h2>
-                        <label for="registeredName">Nombre Registrado:</label>
-                        <input type="text" id="registeredName" name="registeredName" readonly>
-                        
-                        <label for="description">Descripción:</label>
-                        <textarea id="description" name="description" required></textarea>
-                        
+                    <div class="form-section">                  
                         <h2>Seleccion tipo de paquete</h2>
                         <div class="room-option">
                             <input type="radio" id="room1" name="room" value="deluxe" />

@@ -220,6 +220,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
 });
+function searchFunction() {
+    var query = document.getElementById('search-input').value;
+    alert('Buscar: ' + query);
+    // Aquí puedes agregar la lógica para manejar la búsqueda.
+}
 
       
 

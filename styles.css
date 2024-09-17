@@ -6,6 +6,53 @@ body {
     background-color: #7C93C3;
 }
 
+
+.top-navbar {
+    background-color: #1E2A5E;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 250px); 
+    z-index: 1000;
+    
+}
+
+.top-navbar .brand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.top-navbar .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.top-navbar .user-info #username {
+    margin-right: 30px;
+    font-size: 1rem;
+}
+
+.top-navbar .user-info #logoutButton {
+    padding: 6px 12px;
+    background-color: #5e7b9e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+.top-navbar .user-info #logoutButton:hover {
+    background-color: #E1D7B7;
+    color: black;
+}
+
 .sidebar {
     width: 250px;
     background-color: #1E2A5E; 
@@ -64,6 +111,7 @@ body {
 
 .main-content {
     margin-left: 270px;
+    margin-top: 60px;
     padding: 20px;
     width: calc(100% - 270px);
 }
@@ -150,6 +198,7 @@ body {
     height: 100%; 
     overflow: auto; 
     background-color: rgba(0,0,0,0.5);
+    z-index: 1050;
 }
 
 .modal-content {
@@ -165,12 +214,13 @@ body {
     position: relative; 
     top: 50%;
     transform: translateY(-50%); 
+    z-index: 1060;
 }
 
 .modal-buttons {
     display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
-    gap: 10px; /* Espacio entre botones */
+    justify-content: center;
+    gap: 10px; 
     margin-top: 20px;
 }
 

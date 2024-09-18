@@ -97,6 +97,10 @@ document.getElementById('openServicioModal').onclick = function() {
 document.getElementById('openPaqueteModal').onclick = function() {
     openModal('paqueteModal');
 }
+document.getElementById('openeditRoomModal').onclick = function() {
+    openModal('editRoomModal');
+}
+
 
 document.getElementById('toggleSidebar').addEventListener('click', function () {
     const sidebar = document.getElementById('sidebar');
@@ -133,6 +137,7 @@ document.querySelector('.close').addEventListener('click', function() {
 document.getElementById('eliminarModal').addEventListener('click', function () {
     closeModal('eliminarModal');
 });
+
 
 $(document).ready(function() {
     // Inicialmente ocultar todas las secciones
@@ -192,34 +197,18 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'block';
     });
 
-    // Cerrar el modal al hacer clic en la "x"
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
-        estadoSelect.value = previousValue; // Revertir al valor anterior si se cancela
-    };
-
-    // Si el usuario confirma el cambio
-    confirmBtn.onclick = function() {
-        previousValue = estadoSelect.value; // Actualizar el valor anterior con el nuevo estado
-        modal.style.display = 'none';
-    };
-
-    // Si el usuario cancela el cambio
-    cancelBtn.onclick = function() {
-        modal.style.display = 'none';
-        estadoSelect.value = previousValue; // Revertir al valor anterior si se cancela
-    };
-
-    // Si el usuario hace clic fuera del modal, también se cierra
-    window.onclick = function(event) {
-        if (event.target.classList.contains('modal')) {
-            closeModal(event.target.id);
-            estadoSelect.value = previousValue;
-        }
-        
-    };
     
+  
 });
 
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        closeModal(event.target.id);
+        estadoSelect.value = previousValue;
+    };
+    
+}
+
+ 
       
 

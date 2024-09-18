@@ -421,3 +421,63 @@ body {
     background-color: #e0f7fa; /* Color de fondo cuando está seleccionado */
     border-color: #00796b; /* Color del borde cuando está seleccionado */
 }
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+/* Ocultar el checkbox real */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo del deslizador */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff0000;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+/* El deslizador cuando está activado (checked) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Cuando el input está seleccionado (checked) */
+input:checked + .slider {
+    background-color: #28a745; /* Verde para "ocupado" */
+}
+
+/* Mueve el deslizador a la derecha cuando está activado */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Agregar el borde redondeado al slider */
+.slider.round {
+    border-radius: 25px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

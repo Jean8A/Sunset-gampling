@@ -125,20 +125,18 @@
                                 <td>Una habitación lujosa</td>
                                 <td>$150 por noche</td>
                                 <td>Jacuzzi</td>
+                                <td>Disponible</td>
                                 <td>
-                                    <select id="estadoHabitacion" class="form-control-sm estado-btn">
-                                    <option value="disponible">Disponible</option>
-                                    <option value="ocupada">Ocupada</option>
-                                    <option value="mantenimiento">En Mantenimiento</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <button class="btn btn-sm btn-warning edit-btn">
+                                    <button id="openeditRoomModal" class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
                                     </button>
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
@@ -149,12 +147,7 @@
                                 <td>Una habitación cómoda</td>
                                 <td>$80 por noche</td>
                                 <td>Cabaña 2</td>
-                                <td>
-                                    <select  id="estadoHabitacion1" class="form-control-sm estado-btn">
-                                    <option value="disponible">Disponible</option>
-                                    <option value="ocupada">Ocupada</option>
-                                    <option value="mantenimiento">En Mantenimiento</option>
-                                    </select></td>
+                                <td>Ocupada</td>
                                 <td>
                                     <button class="btn btn-sm btn-warning edit-btn">
                                         <i class="fas fa-edit"></i>
@@ -162,6 +155,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                         </tbody>
@@ -212,6 +209,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
@@ -230,6 +231,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                         </tbody>
@@ -282,6 +287,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
@@ -298,6 +307,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                         </tbody>
@@ -345,6 +358,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
@@ -361,6 +378,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                         </tbody>
@@ -404,6 +425,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
@@ -418,6 +443,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                         </tbody>
@@ -469,6 +498,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                             <tr>
@@ -487,6 +520,10 @@
                                     <button class="btn btn-sm btn-danger delete-btn">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+                                    <label class="switch">
+                                        <input type="checkbox" id="estadoHabitacion">
+                                        <span class="slider"></span>
+                                    </label>
                                 </td>
                             </tr>
                         </tbody>
@@ -674,6 +711,48 @@
                 <h4>¿Seguro que quieres cambiar el estado?</h4>
                 <button id="confirmBtn" class="btn btn-sm btn-success">Sí, cambiar</button>
                 <button id="cancelBtn" class="btn btn-sm btn-danger">Cancelar</button>
+            </div>
+        </div>
+        <div id="editRoomModal" class="modal">
+            <div class="modal-content">
+              <span class="close"   >&times;</span>
+              <h2>Editar Habitación</h2>
+              <form id="editRoomForm">
+                <div class="form-group">
+                  <label for="nombreHabitacion">Nombre de la habitación</label>
+                  <input type="text" id="nombreHabitacion" value="Habitación 1">
+                </div>
+                <div class="form-group">
+                  <label for="tipoHabitacion">Tipo de habitación</label>
+                  <input type="text" id="tipoHabitacion" value="Deluxe">
+                </div>
+                <div class="form-group">
+                  <label for="capacidadHabitacion">Capacidad</label>
+                  <input type="number" id="capacidadHabitacion" value="4">
+                </div>
+                <div class="form-group">
+                  <label for="descripcionHabitacion">Descripción</label>
+                  <textarea id="descripcionHabitacion">Una habitación lujosa</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="precioHabitacion">Precio por noche</label>
+                  <input type="text" id="precioHabitacion" value="$150 por noche">
+                </div>
+                <div class="form-group">
+                  <label for="serviciosHabitacion">Servicios</label>
+                  <input type="text" id="serviciosHabitacion" value="Jacuzzi">
+                </div>
+                <div class="form-group">
+                  <label for="estadoHabitacion">Estado</label>
+                  <select id="estadoHabitacion">
+                    <option value="disponible" selected>Disponible</option>
+                    <option value="ocupada">Ocupada</option>
+                    <option value="mantenimiento">En Mantenimiento</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn">Guardar</button>
+                <button type="button" class="btn cancel" id="editarButton">Cancelar</button>
+              </form>
             </div>
         </div>
         <div class="module-content" id="dashboard" style="display: none;">
